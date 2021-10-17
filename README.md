@@ -1,6 +1,6 @@
 This is a solution to Tip calculator app challenge on Frontend Mentor.
 
-Live Site URL: 
+Live Site URL: https://tip-calculator-seven-omega.vercel.app/
 
 Built with:
 
