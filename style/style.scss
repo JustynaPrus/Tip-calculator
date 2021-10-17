@@ -1,0 +1,217 @@
+@import url(https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap);
+
+$strong-cyan: hsl(172, 67%, 45%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$grayish-cyan: hsl(189, 41%, 97%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$second-grayish-cyan: hsl(184, 14%, 56%);
+$red: hsl(0, 100%, 74%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $light-grayish-cyan;
+    min-height: 100vh;
+    font-family: 'Space Mono', monospace;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main {
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    border-radius: 16px;
+    min-width: 50vw;
+    section {
+        width: 50%;
+    }
+}
+.logo {
+    padding-bottom: 45px;
+}
+.calculation {
+    padding: 0px 20px;
+    .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 32%;
+        grid-template-rows: 1fr 1fr;
+        gap: 8px;
+        margin: 10px 0 20px;
+        button {
+            background-color: $very-dark-cyan;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            cursor: pointer;
+            &:hover {
+                background-color: $strong-cyan;
+                color: $very-dark-cyan;
+            }
+        }
+        .custom {
+            background-color: $grayish-cyan;
+            color: $dark-grayish-cyan;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            grid-column-end: 4;
+            text-align: right;
+            padding-right: 8px;
+            &:focus {
+                outline-color: $strong-cyan;
+                color: $very-dark-cyan;
+            }
+        }
+    }
+    .box_input {
+        position: relative;
+        input {
+            background-color: $grayish-cyan;
+            border: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 16px;
+            color: $dark-grayish-cyan;
+            text-align: end;
+            width: 100%;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 5px;
+            margin: 5px 0 20px;
+            &:focus {
+                outline-color: $strong-cyan;
+                color: $very-dark-cyan;
+            }
+        }
+        .icon {
+            position: absolute;
+            left: 12px;
+            top: 25%;
+            max-height: 14px;
+        }
+    }
+    .text {
+        font-size: 12px;
+        font-weight: 700;
+        color: $dark-grayish-cyan;
+        
+    }
+    .flex {
+        display: flex;
+        padding-top: 5px;
+        justify-content: space-between;
+        .alert {
+            color: indianred;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: right;
+            opacity: 0;
+        }
+    }
+    
+}
+.result {
+    padding: 25px 20px 20px;
+    background-color: $very-dark-cyan;
+    border-radius: 8px;
+    .box_text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    p {
+        color: white;
+        font-size: 12px;
+        span {
+            color: $light-grayish-cyan;
+        }
+    }
+    .box_result {
+        display: flex;
+        align-items: center;
+        .result_text {
+            font-size: 32px;
+            color: $strong-cyan;
+            font-weight: 700;
+        }
+        .icon {
+            height: 26px;
+            filter: brightness(0) saturate(100%) invert(62%) sepia(49%) saturate(600%) hue-rotate(122deg) brightness(92%) contrast(91%);
+        }
+    }
+    button {
+        background-color: $light-grayish-cyan;
+        border: none;
+        color: $very-dark-cyan;
+        border-radius: 5px;
+        padding: 5px;
+        width: 100%;
+        font-family: 'Space Mono', monospace;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 60px;
+        cursor: pointer;
+    }
+}
+.attribution { 
+    font-size: 11px;
+    text-align: center; 
+    padding-top: 30px;
+    color: $very-dark-cyan;
+    a { 
+        color: $very-dark-cyan; 
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -35%);
+    }
+    main {
+        flex-direction: column;
+        section {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .container {
+        width: 100%;
+    }
+    main {
+        width: 100%;
+    }
+}
+
+/*Remove Arrows*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
